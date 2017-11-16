@@ -7,6 +7,7 @@ import javax.websocket.CloseReason;
 import javax.websocket.Endpoint;
 import javax.websocket.EndpointConfig;
 import javax.websocket.MessageHandler;
+import javax.websocket.OnMessage;
 import javax.websocket.Session;
 
 public class WebsocketWithoutAnno extends Endpoint {
@@ -61,6 +62,7 @@ public class WebsocketWithoutAnno extends Endpoint {
      * @param message 客户端发送过来的消息
      * @param session 可选的参数
      */
+    @OnMessage
     public void onMessage(String message, Session session) {
         System.out.println("来自客户端的消息:" + message);
     }
